@@ -1,4 +1,7 @@
-
+Observations:
+1. There are far more male than female players
+2. The most popular age group is 20 to 24 year olds
+3. The Retribution Axe is the most popular item
 
 ```python
 # Import the Pandas library
