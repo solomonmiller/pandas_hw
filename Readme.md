@@ -1,7 +1,4 @@
-Observations:
-1. There are far more male than female players
-2. The most popular age group is 20 to 24 year olds
-3. The Retribution Axe is the most popular item
+
 
 ```python
 # Import the Pandas library
@@ -20,90 +17,7 @@ json_path = "HW/purchase_data.json"
 # Read the JSON into a Pandas DataFrame
 Heroes_df = pd.read_json(json_path)
 
-# Print the first five rows of data to the screen
-Heroes_df.head()
 ```
-
-
-
-
-<div>
-<style>
-    .dataframe thead tr:only-child th {
-        text-align: right;
-    }
-
-    .dataframe thead th {
-        text-align: left;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Age</th>
-      <th>Gender</th>
-      <th>Item ID</th>
-      <th>Item Name</th>
-      <th>Price</th>
-      <th>SN</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>38</td>
-      <td>Male</td>
-      <td>165</td>
-      <td>Bone Crushing Silver Skewer</td>
-      <td>3.37</td>
-      <td>Aelalis34</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>21</td>
-      <td>Male</td>
-      <td>119</td>
-      <td>Stormbringer, Dark Blade of Ending Misery</td>
-      <td>2.32</td>
-      <td>Eolo46</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>34</td>
-      <td>Male</td>
-      <td>174</td>
-      <td>Primitive Blade</td>
-      <td>2.46</td>
-      <td>Assastnya25</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>21</td>
-      <td>Male</td>
-      <td>92</td>
-      <td>Final Critic</td>
-      <td>1.36</td>
-      <td>Pheusrical25</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>23</td>
-      <td>Male</td>
-      <td>63</td>
-      <td>Stormfury Mace</td>
-      <td>1.27</td>
-      <td>Aela59</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
 
 
 ```python
@@ -118,10 +32,6 @@ print("Total Players = "  + str(total_count))
 ```python
 Unique_items = pd.DataFrame(Heroes_df['Item ID'].unique())
 unique = Unique_items.count()
-```
-
-
-```python
 avg_purchase_price = Heroes_df['Price'].mean()
 tot_purchases = Heroes_df['Item ID'].count()
 Total_Revenue = Heroes_df['Price'].sum()
@@ -181,8 +91,6 @@ print(test)
 
 
 ```python
-
-
 bins = [0,10, 14, 19, 24, 29,34,39,100]
 labels = ['<10','10-14','15-19','20-24','25-29','30-34','35-39','40+']
 Heroes_df['Binned'] = pd.cut(Heroes_df['Age'],bins=bins, labels=labels)
