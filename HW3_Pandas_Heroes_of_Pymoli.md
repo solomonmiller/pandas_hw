@@ -160,69 +160,20 @@ gender_df = gender_df.xs('Price',axis=1,drop_level=True)
 #gender_df['Normalized Totals'] = gender_df['sum'] / gender_df['count'] 
 test = gender_df.rename(columns={'count':'Purchase Count','sum':'Total Purchase Value','mean':'Average Purchase Price'}) 
 test['Normalized Totals'] = test['Total Purchase Value'] / test['Purchase Count'] 
-test
+print(test)
 ```
 
-
-
-
-<div>
-<style>
-    .dataframe thead tr:only-child th {
-        text-align: right;
-    }
-
-    .dataframe thead th {
-        text-align: left;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Purchase Count</th>
-      <th>Total Purchase Value</th>
-      <th>Average Purchase Price</th>
-      <th>Normalized Totals</th>
-    </tr>
-    <tr>
-      <th>Gender</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Female</th>
-      <td>136</td>
-      <td>382.91</td>
-      <td>2.815515</td>
-      <td>2.815515</td>
-    </tr>
-    <tr>
-      <th>Male</th>
-      <td>633</td>
-      <td>1867.68</td>
-      <td>2.950521</td>
-      <td>2.950521</td>
-    </tr>
-    <tr>
-      <th>Other / Non-Disclosed</th>
-      <td>11</td>
-      <td>35.74</td>
-      <td>3.249091</td>
-      <td>3.249091</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
+                           Purchase Count  Total Purchase Value  \
+    Gender                                                        
+    Female                            136                382.91   
+    Male                              633               1867.68   
+    Other / Non-Disclosed              11                 35.74   
+    
+                           Average Purchase Price  Normalized Totals  
+    Gender                                                            
+    Female                               2.815515           2.815515  
+    Male                                 2.950521           2.950521  
+    Other / Non-Disclosed                3.249091           3.249091  
 
 
 
